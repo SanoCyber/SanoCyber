@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="description" content="Personal Digital Security Services" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SanoCyber - Home</title>
+  <title>SecureMe - Home</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Header / Navigation -->
   <header>
     <div class="nav-container">
-      <a href="index.html" class="logo">SanoCyber</a>
+      <a href="index.html" class="logo">SecureMe</a>
       <!-- Hamburger icon for mobile -->
       <span class="nav-toggle" id="navToggle">&#9776;</span>
       <nav>
@@ -37,7 +37,7 @@
 
   <!-- Services Section -->
   <section id="services" class="services section">
-    <h2>My Services</h2>
+    <h2>Our Services</h2>
     <p class="section-subtitle">Tailored cybersecurity solutions for individuals and families</p>
 
     <div class="services-grid">
@@ -52,7 +52,7 @@
       <div class="service-card">
         <div class="service-icon">🔑</div>
         <h3>Password Manager Setup</h3>
-        <p>Secure your accounts with strong, unique passwords—no more “123456”! I will guide you through setup.</p>
+        <p>Secure your accounts with strong, unique passwords—no more “123456”! We’ll guide you through setup.</p>
       </div>
 
       <!-- Service Card 3 -->
@@ -76,11 +76,11 @@
         <p>Secure your router, Wi-Fi, and smart devices against unauthorized access.</p>
       </div>
 
-      <!-- Service Card 6 (NEW) -->
+      <!-- Service Card 6 -->
       <div class="service-card">
         <div class="service-icon">💻</div>
         <h3>Computer Repairs/Building</h3>
-        <p>From hardware troubleshooting to assembling custom PCs, let me handle your repair and build needs.</p>
+        <p>From hardware troubleshooting to assembling custom PCs, let us handle your repair and build needs.</p>
       </div>
     </div>
   </section>
@@ -132,25 +132,47 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact Section with Formspree Integration -->
   <section id="contact" class="contact section">
     <h2>Get in Touch</h2>
     <p class="section-subtitle">Ready to protect your digital world?</p>
+    
+    <!-- 
+      Replace "xyzzbjpw" with your actual Formspree form ID 
+      from https://formspree.io/f/YOUR_FORM_ID 
+    -->
     <form
-      action="https://formspree.io/f/your-form-id" 
-      method="POST" 
+      action="https://formspree.io/f/xyzzbjpw"
+      method="POST"
       class="contact-form"
     >
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
-      <button type="submit" class="btn-primary">Send Message</button>
+      <label for="email">
+        Your Email:
+        <input 
+          type="email" 
+          name="email" 
+          id="email" 
+          placeholder="Your Email" 
+          required 
+        />
+      </label>
+      <label for="message">
+        Your Message:
+        <textarea
+          name="message"
+          id="message"
+          rows="5"
+          placeholder="Your Message"
+          required
+        ></textarea>
+      </label>
+      <button type="submit" class="btn-primary">Send</button>
     </form>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> SecureMe. All rights reserved.</p>
     <!-- Social icons -->
     <div class="social-icons">
       <a href="https://facebook.com/YourPage" target="_blank">Facebook</a> |
