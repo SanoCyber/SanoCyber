@@ -13,16 +13,13 @@ if (yearSpan2) {
 const navLinks = document.querySelectorAll(".nav-links a");
 navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
-    // If the link is an anchor referencing a section
-    // in index.html or about.html
+    // If the link is an anchor referencing a section on this or another page
     if (link.getAttribute("href").includes("#")) {
       // Only prevent default if it's a same-page anchor
       const [pageRef, anchor] = link.getAttribute("href").split("#");
-      // If there's no pageRef, it's same-page
       if (!pageRef) {
         e.preventDefault();
-        const targetId = anchor;
-        const targetElement = document.getElementById(targetId);
+        const targetElement = document.getElementById(anchor);
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: "smooth" });
         }
