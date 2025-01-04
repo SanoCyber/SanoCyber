@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Personal Digital Security Services" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SanoCyber - Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">SanoCyber</a>
+      <!-- Hamburger icon for mobile -->
+      <span class="nav-toggle" id="navToggle">&#9776;</span>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active-link">Home</a></li>
+          <li><a href="about.html">Learn More</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Helping You Stay Safe Online <br />Without the Tech Overload</h1>
+      <p>Your guide to digital security—helping you stay safe from hacks, phishing attempts, and privacy threats.</p>
+      <a href="#services" class="btn-primary">View Services</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services section">
+    <h2>My Services</h2>
+    <p class="section-subtitle">Tailored cybersecurity solutions for individuals and families</p>
+
+    <div class="services-grid">
+      <!-- Service Card 1 -->
+      <div class="service-card">
+        <div class="service-icon">🔎</div>
+        <h3>Digital Security Checkup</h3>
+        <p>Get a thorough audit of your devices and discover simple ways to improve your online safety.</p>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="service-card">
+        <div class="service-icon">🔑</div>
+        <h3>Password Manager Setup</h3>
+        <p>Secure your accounts with strong, unique passwords—no more “123456”! I will guide you through setup.</p>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="service-card">
+        <div class="service-icon">👤</div>
+        <h3>Social Media Security</h3>
+        <p>Review and adjust privacy settings on your favorite platforms so you only share what you want.</p>
+      </div>
+
+      <!-- Service Card 4 -->
+      <div class="service-card">
+        <div class="service-icon">❗</div>
+        <h3>Phishing Awareness Training</h3>
+        <p>Learn to spot and avoid common phishing scams with engaging, real-world examples.</p>
+      </div>
+
+      <!-- Service Card 5 -->
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Home Network Security</h3>
+        <p>Secure your router, Wi-Fi, and smart devices against unauthorized access.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing section">
+    <h2>Pricing & Subscriptions</h2>
+    <p class="section-subtitle">Fair and transparent rates for every budget</p>
+    
+    <div class="pricing-tiers">
+      <!-- One-Time Services -->
+      <div class="pricing-tier">
+        <h3>One-Time Services</h3>
+        <ul>
+          <li><strong>Digital Security Checkup</strong> – £20–£30</li>
+          <li><strong>Password Manager Setup</strong> – £15</li>
+          <li><strong>Social Media Security</strong> – £20</li>
+          <li><strong>Phishing Awareness Training</strong> – £25</li>
+          <li><strong>Home Network Security</strong> – £30</li>
+        </ul>
+      </div>
+
+      <!-- Packages -->
+      <div class="pricing-tier">
+        <h3>Packages</h3>
+        <ul>
+          <li><strong>Complete Digital Security Package</strong> – £60</li>
+          <li><strong>Family Safety Package</strong> – £50</li>
+        </ul>
+      </div>
+
+      <!-- Subscription -->
+      <div class="pricing-tier">
+        <h3>Subscription</h3>
+        <ul>
+          <li>
+            <strong>Ongoing Support</strong> – £10/month
+            <br />
+            <small>(Quarterly checkups and continual advice)</small>
+          </li>
+          <!-- Future Payment Button placeholder -->
+          <li style="margin-top: 1rem;">
+            <!-- PayPal/Stripe integration could go here in the future -->
+            <button class="btn-primary" disabled>Subscribe with PayPal (Coming Soon)</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section">
+    <h2>Get in Touch</h2>
+    <p class="section-subtitle">Ready to protect your digital world?</p>
+    <form
+      action="https://formspree.io/f/your-form-id" 
+      method="POST" 
+      class="contact-form"
+    >
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
+    <!-- Social icons -->
+    <div class="social-icons">
+      <a href="https://facebook.com/YourPage" target="_blank">Facebook</a> |
+      <a href="https://instagram.com/YourPage" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
