@@ -44,7 +44,7 @@ header {
   font-weight: bold;
 }
 
-/* Hamburger icon (hidden by default on desktop) */
+/* Hamburger icon (hidden on larger screens) */
 .nav-toggle {
   display: none;
   font-size: 2rem;
@@ -287,7 +287,7 @@ header {
     flex-direction: column;
     background: #050b2a;
     position: absolute;
-    top: 70px; /* Just below the header */
+    top: 70px; /* below the header */
     left: 0;
     right: 0;
     width: 100%;
@@ -305,7 +305,7 @@ header {
   }
 
   .hero {
-    /* Optionally remove/reduce the hero background on mobile to improve readability */
+    /* Optionally remove/reduce hero background on mobile to improve readability */
     /* background: #050b2a; */
     height: auto;
     padding: 3rem 1rem;
