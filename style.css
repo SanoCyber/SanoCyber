@@ -138,19 +138,34 @@ header {
 
 /* Info blocks on about.html */
 .info-block {
-  text-align: left;
-  background: #fff;
-  margin: 2rem auto;
-  padding: 2rem;
-  max-width: 800px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  text-align: left; /* Align text for easier reading */
+  background: #f9f9f9; /* Light gray background for contrast */
+  margin: 2rem auto; /* Space around the block */
+  padding: 2.5rem; /* Add more padding for breathing space */
+  max-width: 800px; /* Limit width for better readability */
+  border-radius: 10px; /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+  line-height: 1.8; /* Increase line spacing for better readability */
+  border-left: 5px solid #162241; /* Blue accent on the left */
+  padding-left: 2rem; /* Adjust padding for the accent line */
+
 }
 
 .info-block h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 2rem; /* Larger heading for emphasis */
+  margin-bottom: 1.5rem; /* Add more space below the heading */
+  color: #222; /* Darker heading color for better visibility */
+  text-align: center; /* Center the heading */
+  font-weight: bold; /* Make the heading stand out */
 }
+
+.info-block p {
+  font-size: 1rem; /* Standard font size */
+  color: #555; /* Softer text color for readability */
+  margin-bottom: 1.5rem; /* Add spacing between paragraphs */
+  text-align: justify; /* Align text to both sides for a clean look */
+}
+
 
 /* ============================================= */
 /* =============== SERVICES GRID =============== */
