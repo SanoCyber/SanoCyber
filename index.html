@@ -173,14 +173,23 @@
     </form>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
-    <!-- Social icons -->
-    <div class="social-icons">
-      <a href="https://instagram.com/SanoCyber" target="_blank">Instagram</a>
-    </div>
-  </footer>
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
+  <!-- Social icons -->
+  <div class="social-icons">
+    <a href="https://instagram.com/SanoCyber" target="_blank" style="text-decoration: none;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px; vertical-align: middle;">
+      <span style="margin-left: 5px;">Instagram</span>
+    </a>
+  </div>
+</footer>
+
+<script>
+  // Automatically update the year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+>
 
   <script src="script.js"></script>
 </body>
