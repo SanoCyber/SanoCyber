@@ -295,6 +295,25 @@ header {
   color: #1f3bb3;
 }
 
+<style>
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000; /* Adjust color */
+    margin: 5px 0;
+  }
+
+  .social-icons img {
+    margin-right: 8px; /* Space between logo and text */
+  }
+
+  .social-icons a:hover {
+    color: #E1306C; /* Instagram brand color */
+  }
+</style>
+
+
 /* ============================================= */
 /* ========== MEDIA QUERIES FOR MOBILE ========= */
 /* ============================================= */
