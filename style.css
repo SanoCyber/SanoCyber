@@ -138,34 +138,32 @@ header {
 
 /* Info blocks on about.html */
 .info-block {
-  text-align: left; /* Align text for easier reading */
-  background: #f9f9f9; /* Light gray background for contrast */
-  margin: 2rem auto; /* Space around the block */
-  padding: 2.5rem; /* Add more padding for breathing space */
-  max-width: 800px; /* Limit width for better readability */
-  border-radius: 10px; /* Slightly rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
-  line-height: 1.8; /* Increase line spacing for better readability */
-  border-left: 5px solid #162241; /* Blue accent on the left */
-  padding-left: 2rem; /* Adjust padding for the accent line */
-
+  text-align: left;
+  background: #f9f9f9;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  line-height: 1.8;
+  border-left: 5px solid #162241;
+  padding-left: 2rem;
 }
 
 .info-block h3 {
-  font-size: 2rem; /* Larger heading for emphasis */
-  margin-bottom: 1.5rem; /* Add more space below the heading */
-  color: #222; /* Darker heading color for better visibility */
-  text-align: center; /* Center the heading */
-  font-weight: bold; /* Make the heading stand out */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+  text-align: center;
+  font-weight: bold;
 }
 
 .info-block p {
-  font-size: 1rem; /* Standard font size */
-  color: #555; /* Softer text color for readability */
-  margin-bottom: 1.5rem; /* Add spacing between paragraphs */
-  text-align: justify; /* Align text to both sides for a clean look */
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  text-align: justify;
 }
-
 
 /* ============================================= */
 /* =============== SERVICES GRID =============== */
@@ -295,24 +293,21 @@ header {
   color: #1f3bb3;
 }
 
-<style>
-  .social-icons a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #000; /* Adjust color */
-    margin: 5px 0;
-  }
+.social-icons a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  margin: 5px 0;
+}
 
-  .social-icons img {
-    margin-right: 8px; /* Space between logo and text */
-  }
+.social-icons img {
+  margin-right: 8px;
+}
 
-  .social-icons a:hover {
-    color: #E1306C; /* Instagram brand color */
-  }
-</style>
-
+.social-icons a:hover {
+  color: #E1306C;
+}
 
 /* ============================================= */
 /* ========== MEDIA QUERIES FOR MOBILE ========= */
@@ -323,13 +318,12 @@ header {
     display: block;
     cursor: pointer;
   }
-
   .nav-links {
     display: none;
     flex-direction: column;
     background: #050b2a;
     position: absolute;
-    top: 70px; /* below the header */
+    top: 70px;
     left: 0;
     right: 0;
     width: 100%;
@@ -337,30 +331,22 @@ header {
     z-index: 9999;
     padding-bottom: 1rem;
   }
-
   .nav-links.show {
     display: flex;
   }
-
   .nav-links li {
     margin: 1rem 0;
   }
-
   .hero {
-    /* Optionally remove/reduce hero background on mobile to improve readability */
-    /* background: #050b2a; */
     height: auto;
     padding: 3rem 1rem;
   }
-
   .hero-content {
     max-width: 100%;
   }
-
   .hero-content h1 {
     font-size: 2rem;
   }
-
   .pricing-tiers {
     flex-direction: column;
     align-items: center;
