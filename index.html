@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Meta Tags -->
-<meta name="description" content="SanoCyber offers tailored cybersecurity services to protect your privacy and data. Services include digital security checkups, password management, and more.">
-<meta name="keywords" content="cybersecurity, digital security, privacy protection, password manager, phishing awareness, network security">
-<meta name="author" content="SanoCyber">
-<meta name="robots" content="index, follow">
-
+  <meta name="description" content="SanoCyber offers tailored cybersecurity services to protect your privacy and data.">
+  <meta name="keywords" content="cybersecurity, digital security, privacy protection, password manager, phishing awareness, network security">
+  <meta name="author" content="SanoCyber">
+  <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cybersecurity Services by SanoCyber | Protect Your Privacy & Data</title>
   <link rel="canonical" href="https://www.sanocyber.com">
@@ -22,7 +21,6 @@
       <span class="nav-toggle" id="navToggle">&#9776;</span>
       <nav>
         <ul class="nav-links" id="navLinks">
-          <!-- The links below reference anchors on this page or the about.html page -->
           <li><a href="index.html" class="active-link">Home</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -33,8 +31,8 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
+  <!-- Hero Section (renamed id to avoid conflict) -->
+  <section id="hero-section" class="hero">
     <div class="hero-content">
       <h1>Helping You Stay Safe Online <br />Without the Tech Overload</h1>
       <p>Helping you stay protected from hacks, phishing, and privacy threats with practical, up-to-date cybersecurity knowledge.</p>
@@ -46,7 +44,6 @@
   <section id="services" class="services section">
     <h2>My Services</h2>
     <p class="section-subtitle">Tailored cybersecurity solutions for individuals and families</p>
-
     <div class="services-grid">
       <!-- Service Card 1 -->
       <div class="service-card">
@@ -54,35 +51,30 @@
         <h3>Digital Security Checkup</h3>
         <p>Get a thorough audit of your devices and discover simple ways to improve your online safety.</p>
       </div>
-
       <!-- Service Card 2 -->
       <div class="service-card">
         <div class="service-icon">🔑</div>
         <h3>Password Manager Setup</h3>
         <p>Secure your accounts with strong, unique passwords—no more “123456”! I will guide you through setup.</p>
       </div>
-
       <!-- Service Card 3 -->
       <div class="service-card">
         <div class="service-icon">👤</div>
         <h3>Social Media Security</h3>
         <p>Review and adjust privacy settings on your favorite platforms so you only share what you want.</p>
       </div>
-
       <!-- Service Card 4 -->
       <div class="service-card">
         <div class="service-icon">❗</div>
         <h3>Phishing Awareness Training</h3>
         <p>Learn to spot and avoid common phishing scams with engaging, real-world examples.</p>
       </div>
-
       <!-- Service Card 5 -->
       <div class="service-card">
         <div class="service-icon">🏠</div>
         <h3>Home Network Security</h3>
         <p>Secure your router, Wi-Fi, and smart devices against unauthorized access.</p>
       </div>
-
       <!-- Service Card 6 -->
       <div class="service-card">
         <div class="service-icon">💻</div>
@@ -96,7 +88,6 @@
   <section id="pricing" class="pricing section">
     <h2>Pricing & Subscriptions</h2>
     <p class="section-subtitle">Fair and transparent rates for every budget</p>
-    
     <div class="pricing-tiers">
       <!-- One-Time Services -->
       <div class="pricing-tier">
@@ -110,7 +101,6 @@
           <li><strong>Computer Repairs/Building</strong> – Contact for Quote</li>
         </ul>
       </div>
-
       <!-- Pricing -->
       <div class="pricing-tier">
         <h3>Pricing</h3>
@@ -118,7 +108,6 @@
           <li><strong>Pricing varies based on the number of devices that require attention, the time spent on them, and any additional software you may need or request.</strong></li>
         </ul>
       </div>
-
       <!-- Subscription -->
       <div class="pricing-tier">
         <h3>Subscription</h3>
@@ -130,7 +119,6 @@
           </li>
           <!-- PayPal placeholder -->
           <li style="margin-top: 1rem;">
-            <!-- Future PayPal or Stripe button can go here -->
             <button class="btn-primary" disabled>Subscribe with PayPal (Coming Soon)</button>
           </li>
         </ul>
@@ -142,54 +130,32 @@
   <section id="contact" class="contact section">
     <h2>Get in Touch</h2>
     <p class="section-subtitle">Ready to protect your digital world?</p>
-    
-
-    <form
-      action="https://formspree.io/f/xyzzbjpw"
-      method="POST"
-      class="contact-form"
-    >
+    <form action="https://formspree.io/f/xyzzbjpw" method="POST" class="contact-form">
       <label for="email">
         Your Email:
-        <input 
-          type="email" 
-          name="email" 
-          id="email" 
-          placeholder="Your Email" 
-          required 
-        />
+        <input type="email" name="email" id="email" placeholder="Your Email" required />
       </label>
       <label for="message">
         Your Message:
-        <textarea
-          name="message"
-          id="message"
-          rows="5"
-          placeholder="Your Message"
-          required
-        ></textarea>
+        <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
       </label>
       <button type="submit" class="btn-primary">Send</button>
     </form>
   </section>
 
-<!-- Footer -->
-<footer class="footer">
-  <p>&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
-  <!-- Social icons -->
-  <div class="social-icons">
-    <a href="https://instagram.com/SanoCyber" target="_blank" style="text-decoration: none;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px; vertical-align: middle;">
-      <span style="margin-left: 5px;">Instagram</span>
-    </a>
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
+    <!-- Social icons -->
+    <div class="social-icons">
+      <a href="https://instagram.com/SanoCyber" target="_blank" style="text-decoration: none;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px; vertical-align: middle;">
+        <span style="margin-left: 5px;">Instagram</span>
+      </a>
+    </div>
+  </footer>
 
-<script>
-  // Automatically update the year
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
+  <!-- External JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>
