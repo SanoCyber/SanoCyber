@@ -330,30 +330,27 @@ header {
 /* === CYBER SECURITY AWARENESS PROMO BLOCK ==== */
 /* ============================================= */
 
-.cyber-hero {
-  background: url("images/Background.jpg") center center/cover no-repeat;
+.cyber-promo {
+  background-color: #f2f4f8; /* soft light grey-blue tone */
+  padding: 4rem 2rem;
   text-align: center;
-  padding: 5rem 2rem;
-  color: #fff;
-  position: relative;
 }
 
-.cyber-hero-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 2rem;
-  max-width: 750px;
+.promo-content {
+  max-width: 800px;
   margin: 0 auto;
-  border-radius: 10px;
 }
 
-.cyber-hero-overlay h2 {
+.promo-content h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #111;
 }
 
-.cyber-hero-overlay p {
+.promo-content p {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
+  color: #333;
 }
 
 .btn-etsy {
