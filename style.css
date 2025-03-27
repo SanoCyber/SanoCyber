@@ -325,3 +325,71 @@ header {
     font-size: 1.5rem;
   }
 }
+
+/* ============================================= */
+/* ======= CYBER SECURITY AWARENESS PAGE ======= */
+/* ============================================= */
+
+.cyber-hero {
+  background: url("images/Background.jpg") center center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.cyber-hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.cyber-section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cyber-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cyber-section ul {
+  text-align: left;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.cyber-section li {
+  margin-bottom: 0.5rem;
+}
+
+.cyber-testimonial {
+  font-style: italic;
+  color: #444;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.cyber-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-etsy {
+  display: inline-block;
+  background: #1f3bb3;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.btn-etsy:hover {
+  background: #162b8a;
+}
+
