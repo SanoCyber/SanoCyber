@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
-  <url>
-    <loc>https://www.sanocyber.com/</loc>
-    <lastmod>2025-01-09</lastmod>
-    <priority>1.0</priority>
-    <changefreq>daily</changefreq>
-  </url>
 
-  <!-- Learn More Page -->
   <url>
-    <loc>https://www.sanocyber.com/learn-more.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <priority>0.8</priority>
+    <loc>https://www.sanocyber.com/</loc> <lastmod>2025-05-03</lastmod> <priority>1.0</priority>
+    <changefreq>daily</changefreq> </url>
+
+  <url>
+    <loc>https://www.sanocyber.com/about.html</loc> <lastmod>2025-05-03</lastmod> <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
-  <!-- Terms Page -->
   <url>
-    <loc>https://www.sanocyber.com/terms.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <priority>0.6</priority>
-    <changefreq>yearly</changefreq>
-  </url>
+    <loc>https://www.sanocyber.com/blog.html</loc> <lastmod>2025-05-03</lastmod> <priority>0.7</priority>
+    <changefreq>weekly</changefreq> </url>
+
+  <url>
+    <loc>https://www.sanocyber.com/tools.html</loc> <lastmod>2025-05-03</lastmod> <priority>0.6</priority>
+    <changefreq>monthly</changefreq> </url>
+
+  <url>
+    <loc>https://www.sanocyber.com/terms.html</loc> <lastmod>2025-05-03</lastmod> <priority>0.5</priority> <changefreq>yearly</changefreq> </url>
+
 </urlset>

@@ -9,15 +9,20 @@
   scroll-behavior: smooth;
 }
 
-body {
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
+  background: #fdfdfd; /* Light background */
+  display: flex;
+  flex-direction: column;
   line-height: 1.6;
-  background: #fdfdfd;
 }
 
-a {
-  text-decoration: none;
+main {
+  flex: 1 0 auto;
 }
 
 /* ============================================= */
@@ -42,9 +47,15 @@ header {
   color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  display: inline-block;
 }
 
-/* Hamburger icon (hidden on larger screens) */
+.logo:hover {
+  color: #00ffae;
+  transform: scale(1.05);
+}
+
 .nav-toggle {
   display: none;
   font-size: 2rem;
@@ -71,12 +82,13 @@ header {
 }
 
 /* ============================================= */
-/* =============== HERO SECTION ================ */
+/* ================== HERO ===================== */
 /* ============================================= */
 
 .hero {
+  flex: 0 0 auto;
   height: 90vh;
-  background: url("images/Background.jpg") center center/cover no-repeat;
+  background: url("images/Background.jpg") center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,167 +104,376 @@ header {
   border-radius: 10px;
 }
 
-.hero-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.hero-content p {
-  margin-bottom: 1.5rem;
-}
-
+/* Button used in Hero */
 .btn-primary {
-  background: #007bff;
+  display: inline-block;
+  background: #007bff; /* Example primary color */
   color: #fff;
   padding: 0.75rem 1.5rem;
+  border: none;
   border-radius: 5px;
-  transition: 0.3s;
-  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Ensure links look like buttons */
 }
 
 .btn-primary:hover {
-  background: #0056b3;
+  background: #0056b3; /* Darker shade on hover */
 }
 
+
 /* ============================================= */
-/* ================ SECTIONS =================== */
+/* ============ GENERAL SECTION STYLES ========= */
 /* ============================================= */
 
-.section {
-  padding: 3rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.section { /* General section styling */
+  padding: 3rem 1rem; /* Increased padding */
+  /* Removed text-align: center; from here */
+}
+
+/* Center ONLY the main heading (h2) and subtitle (.section-subtitle) */
+.section h2,
+.section .section-subtitle {
   text-align: center;
 }
 
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.section h2 { /* Style for main section headings */
+    font-size: 2.2rem; /* Slightly larger heading */
+    margin-bottom: 0.75rem;
+    color: #050b2a; /* Dark blue color */
 }
 
-.section-subtitle {
-  color: #666;
-  margin-bottom: 2rem;
+.section-subtitle { /* Style the subtitle */
+  margin-bottom: 2.5rem; /* Increased space below subtitle */
+  color: #555;
+  font-size: 1.1rem;
 }
+
 
 /* ============================================= */
-/* =============== SERVICES GRID =============== */
+/* =============== SERVICES SECTION ============ */
 /* ============================================= */
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 .service-card {
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  padding: 2rem 1.5rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
   border-radius: 8px;
-  transition: 0.3s;
-  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .service-icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: #1f3bb3;
 }
 
+.service-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #050b2a;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+
 /* ============================================= */
-/* =============== PRICING SECTION ============= */
+/* ============ CYBER PROMO SECTION ============ */
 /* ============================================= */
 
+.cyber-promo {
+  background-color: #eaf2ff; /* Light blue background */
+  padding: 3rem 1rem;
+  text-align: center; /* Center the container content */
+}
+
+.promo-content {
+  max-width: 700px; /* Limit width */
+  margin: 0 auto; /* Center the content block */
+  text-align: center; /* Ensure text inside is centered */
+}
+
+.promo-content h2 {
+  margin-bottom: 1rem;
+  color: #050b2a;
+  font-size: 1.8rem; /* Adjusted size */
+}
+
+.promo-content p {
+  margin-bottom: 1.5rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.btn-etsy {
+  display: inline-block;
+  background-color: #f16521; /* Etsy orange */
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-etsy:hover {
+  background-color: #d95414; /* Darker orange on hover */
+}
+
+
+/* ============================================= */
+/* ============ PRICING SECTION ================ */
+/* ============================================= */
+
+#pricing {
+  background-color: #f9f9f9; /* Give pricing section a light background */
+  /* Uses .section for padding */
+}
+
 .pricing-tiers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto 0; /* Add margin top */
+  padding: 1rem;
 }
 
 .pricing-tier {
-  flex: 1 1 250px;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
+  background-color: #ffffff;
   padding: 2rem;
-  min-width: 250px;
-  max-width: 350px;
-  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+  text-align: left; /* <-- Ensure text is left-aligned */
+  display: flex; /* Use flexbox for better control */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Push button to bottom if needed */
 }
 
 .pricing-tier h3 {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
+  text-align: center; /* Center the tier title */
+  margin-bottom: 1.5rem;
+  color: #050b2a;
+  font-size: 1.4rem; /* Adjusted size */
 }
 
 .pricing-tier ul {
   list-style: none;
-  text-align: left;
+  padding: 0;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Allow list to grow */
+}
+
+.pricing-tier li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.pricing-tier p {
+    text-align: left; /* Ensure paragraphs are left-aligned */
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Allow paragraph to grow */
+}
+
+.pricing-tier small {
+  display: block;
+  margin-top: 0.25rem;
+  color: #666;
+}
+
+.pricing-tier .btn-primary { /* Style button within tier */
+    margin-top: 1rem; /* Add space above button */
+    align-self: center; /* Center button horizontally */
+}
+
+.pricing-tier .btn-primary[disabled] { /* Style the disabled button */
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ============================================= */
+/* =============== TOOLKIT ===================== */
+/* ============================================= */
+/* Styles for tools.html page */
+
+.toolkit-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.toolkit-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #050b2a; /* Match theme */
+}
+
+.toolkit-container label {
+  display: block;
   margin-top: 1rem;
-}
-
-.pricing-tier ul li {
-  margin-bottom: 0.5rem;
-}
-
-/* ============================================= */
-/* =============== CONTACT FORM ================ */
-/* ============================================= */
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 600px;
-  margin: 2rem auto 0;
-}
-
-.contact-form label {
-  display: flex;
-  flex-direction: column;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  text-align: left; /* Align labels left */
 }
 
-.contact-form input,
-.contact-form textarea {
+.toolkit-container input[type="number"],
+.toolkit-container input[type="password"] {
   width: 100%;
   padding: 0.75rem;
   border-radius: 5px;
   border: 1px solid #ccc;
+  margin-top: 0.5rem;
   font-size: 1rem;
 }
 
-.contact-form textarea {
-  resize: vertical;
+.toolkit-container input[type="checkbox"] {
+    margin-right: 0.5rem; /* Space next to checkbox */
 }
+
+.output-box, #result {
+  margin: 1.5rem 0; /* Increased margin */
+  padding: 1rem;
+  background: #f0f0f0; /* Slightly different background */
+  font-size: 1.1rem; /* Adjusted size */
+  border-radius: 6px;
+  word-break: break-all; /* Break long passwords */
+  min-height: 50px; /* Ensure it has some height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+#result strong { /* Style the count in breach checker */
+    color: #d9534f; /* Reddish color for emphasis */
+}
+#result { /* Add specific styles for breach checker result */
+    font-weight: bold;
+}
+
+.btn-copy, .btn-check {
+  background: #1f3bb3; /* Match theme */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-right: 0.5rem; /* Space between buttons */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-copy:hover, .btn-check:hover {
+  background: #050b2a; /* Darker theme color on hover */
+}
+
+/* ============================================= */
+/* ============ BLOG / TERMS / ABOUT =========== */
+/* ============================================= */
+/* Styles primarily for blog.html, terms.html, about.html */
+
+.info-block { /* Used on About and Terms pages */
+    background-color: #ffffff;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.info-block h2 {
+    text-align: left; /* Override section center alignment */
+    margin-bottom: 0.75rem;
+    color: #1f3bb3;
+}
+
+.info-block p {
+    text-align: left; /* Override section center alignment */
+}
+
+.blog-post { /* Styles for blog.html articles */
+    background-color: #ffffff;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    text-align: left; /* Ensure blog text is left-aligned */
+}
+
+.blog-post h2 {
+    text-align: left; /* Override general section alignment */
+    margin-bottom: 0.5rem;
+    color: #1f3bb3;
+}
+
+.blog-post p, .blog-post ul {
+    text-align: left; /* Ensure paragraphs and lists are left-aligned */
+    margin-bottom: 1rem;
+}
+.blog-post ul {
+    padding-left: 2rem; /* Indent lists */
+    list-style: disc; /* Use standard bullets */
+}
+.blog-post small {
+    color: #777;
+    display: block;
+    margin-bottom: 1rem;
+}
+.blog-post a {
+    color: #007bff;
+    text-decoration: none;
+}
+.blog-post a:hover {
+    text-decoration: underline;
+}
+
 
 /* ============================================= */
 /* ================== FOOTER =================== */
 /* ============================================= */
 
 .footer {
-  text-align: center;
-  padding: 1rem;
+  flex-shrink: 0;
   background: #050b2a;
+  padding: 1.5rem 1rem; /* Increased padding */
+  text-align: center;
   color: #fff;
+  margin-top: 3rem; /* Add space above footer */
 }
 
 .footer p {
-  margin: 0;
+  margin: 0 0 0.5rem; /* Add margin below copyright */
 }
-
-/* ============================================= */
-/* ============= SOCIAL ICONS STYLES =========== */
-/* ============================================= */
 
 .social-icons {
   margin-top: 0.5rem;
@@ -264,17 +485,23 @@ header {
   align-items: center;
   text-decoration: none;
   color: #fff;
-  margin: 0 0.25rem;
-  transition: color 0.3s;
+  margin: 0 0.5rem; /* Increased margin */
+  transition: color 0.3s, transform 0.3s;
 }
 
 .social-icons a:hover {
-  color: #1f3bb3;
+  color: #00ffae; /* Match logo hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 .social-icons img {
   margin-right: 8px;
+  vertical-align: middle; /* Align image better with text */
 }
+.social-icons span {
+    vertical-align: middle; /* Align text better with image */
+}
+
 
 /* ============================================= */
 /* ========== MEDIA QUERIES FOR MOBILE ========= */
@@ -286,81 +513,78 @@ header {
     cursor: pointer;
   }
   .nav-links {
-    display: none;
+    display: none; /* Initially hidden */
     flex-direction: column;
     background: #050b2a;
     position: absolute;
-    top: 70px;
+    top: 60px; /* Adjust based on actual header height */
     left: 0;
     right: 0;
     width: 100%;
     text-align: center;
-    z-index: 9999;
+    z-index: 9998; /* Below header but above content */
     padding-bottom: 1rem;
+    border-top: 1px solid #1f3bb3; /* Add a separator */
   }
-  .nav-links.show {
+  .nav-links.show { /* Class added by JS to show menu */
     display: flex;
   }
   .nav-links li {
     margin: 1rem 0;
   }
+
+  header {
+      padding: 0.8rem 1rem; /* Adjust header padding */
+  }
+  .logo {
+      font-size: 1.3rem; /* Smaller logo */
+  }
+
   .hero {
-    height: auto;
-    padding: 3rem 1rem;
+    height: auto; /* Adjust height for smaller screens */
+    padding: 4rem 1rem; /* Adjust padding */
   }
   .hero-content {
-    max-width: 100%;
+    max-width: 90%; /* Allow content to use more width */
+    padding: 1.5rem;
   }
   .hero-content h1 {
-    font-size: 2rem;
+      font-size: 1.8rem; /* Adjust hero heading size */
   }
+
+  .section {
+      padding: 2rem 0.5rem; /* Reduce section padding */
+  }
+  .section h2 {
+      font-size: 1.8rem; /* Reduce section heading size */
+  }
+
+  .services-grid,
   .pricing-tiers {
-    flex-direction: column;
-    align-items: center;
+    /* Grid adjusts automatically due to auto-fit, but ensure padding is okay */
+    padding: 0.5rem;
+    gap: 1rem; /* Reduce gap */
+  }
+  .service-card,
+  .pricing-tier {
+      padding: 1rem; /* Reduce card padding */
+  }
+
+  .toolkit-container {
+      margin: 2rem auto;
+      padding: 1.5rem;
+  }
+  .btn-copy, .btn-check {
+      width: 100%; /* Make buttons full width */
+      margin-right: 0; /* Remove right margin */
+      margin-bottom: 0.5rem; /* Add bottom margin */
+  }
+  .btn-copy:last-of-type, .btn-check:last-of-type {
+      margin-bottom: 0; /* Remove margin from last button */
+  }
+
+  .footer {
+      padding: 1rem 0.5rem;
+      margin-top: 2rem;
   }
 }
-
-@media screen and (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 1.5rem;
-  }
-}
-
-.cyber-promo {
-  background-color: #f2f4f8;
-  padding: 4rem 2rem;
-}
-
-.promo-content {
-  text-align: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.promo-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #111;
-}
-
-.promo-content p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  color: #333;
-}
-
-.btn-etsy {
-  display: inline-block;
-  background: #1f3bb3;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  transition: 0.3s ease-in-out;
-}
-
-.btn-etsy:hover {
-  background: #162b8a;
-}
-
-

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Use SanoCyber's free cybersecurity tools to generate strong passwords and check if your passwords have been breached. Stay safe online with our secure toolkit.">
+  <meta name="keywords" content="password generator, password checker, cybersecurity tools, SanoCyber">
+  <meta name="author" content="SanoCyber">
+  <meta name="robots" content="index, follow">
+  <title>SanoCyber Toolkit | Free Password Tools</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+<header data-aos="fade-down" data-aos-duration="1000">
+  <div class="nav-container">
+    <a href="index.html" class="logo">SanoCyber</a>
+    <span class="nav-toggle" id="navToggle">&#9776;</span>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html" class="active-link">Toolkit</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">Learn More</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="toolkit-container" data-aos="zoom-in">
+  <h2>🔐 Password Generator</h2>
+  <label>Password Length:
+    <input type="number" id="length" min="6" max="64" value="16" />
+  </label>
+  <label><input type="checkbox" id="include-uppercase" checked /> Include Uppercase Letters</label>
+  <label><input type="checkbox" id="include-numbers" checked /> Include Numbers</label>
+  <label><input type="checkbox" id="include-symbols" checked /> Include Symbols</label>
+
+  <div class="output-box" id="password-output">Click Generate to create a secure password</div>
+  <button class="btn-copy" onclick="generatePassword()">Generate Password</button>
+  <button class="btn-copy" onclick="copyPassword()">Copy to Clipboard</button>
+</section>
+
+<section class="toolkit-container" data-aos="zoom-in" style="margin-top: 3rem;">
+  <h2>🔍 Password Breach Checker</h2>
+  <p>Type a password below to anonymously check it against known breaches:</p>
+  <input type="password" id="passwordInput" placeholder="Enter your password" />
+  <button class="btn-check" onclick="checkPassword()">Check Password</button>
+
+  <div id="result"></div>
+</section>
+</main>
+
+<footer class="footer">
+  <p>&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
+  <div class="social-icons">
+    <a href="https://instagram.com/sanocyber" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px;">
+      <span style="margin-left: 5px;">Instagram</span>
+    </a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="script.js"></script>
+<script>
+function generatePassword() {
+  const length = document.getElementById('length').value;
+  const includeUppercase = document.getElementById('include-uppercase').checked;
+  const includeNumbers = document.getElementById('include-numbers').checked;
+  const includeSymbols = document.getElementById('include-symbols').checked;
+
+  const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+  const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const numberChars = '0123456789';
+  const symbolChars = '!@#$%^&*()_+[]{}|;:,.<>?';
+
+  let charSet = lowercaseChars;
+  if (includeUppercase) charSet += uppercaseChars;
+  if (includeNumbers) charSet += numberChars;
+  if (includeSymbols) charSet += symbolChars;
+
+  let password = '';
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charSet.length);
+    password += charSet[randomIndex];
+  }
+
+  document.getElementById('password-output').textContent = password;
+}
+
+function copyPassword() {
+  const passwordOutput = document.getElementById('password-output').textContent;
+  navigator.clipboard.writeText(passwordOutput)
+    .then(() => alert('Password copied to clipboard!'))
+    .catch(() => alert('Failed to copy password.'));
+}
+
+async function checkPassword() {
+  const input = document.getElementById("passwordInput");
+  const result = document.getElementById("result");
+  const password = input.value.trim();
+
+  if (!password) {
+    result.textContent = "Please enter a password.";
+    return;
+  }
+
+  const encoder = new TextEncoder();
+  const data = encoder.encode(password);
+  const hashBuffer = await crypto.subtle.digest("SHA-1", data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
+
+  const prefix = hashHex.substring(0, 5);
+  const suffix = hashHex.substring(5);
+
+  try {
+    const response = await fetch(`https://api.pwnedpasswords.com/range/${prefix}`);
+    const text = await response.text();
+    const lines = text.split('\n');
+    const match = lines.find(line => line.startsWith(suffix));
+
+    if (match) {
+      const count = match.split(':')[1].trim();
+      result.innerHTML = `❌ Oh no! This password has appeared <strong>${count}</strong> times in data breaches.`;
+    } else {
+      result.innerHTML = "✅ Good news! This password was not found in known breaches.";
+    }
+  } catch (err) {
+    result.textContent = "Error checking the password. Please try again later.";
+  }
+}
+
+AOS.init({ duration: 1000, once: true });
+</script>
+</body>
+</html>
