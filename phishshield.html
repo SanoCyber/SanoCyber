@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Use Phish Shield to check emails for phishing scams with AI, brought to you by SanoCyber." />
+  <title>PhishShield | Email Phishing Checker</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">SanoCyber</a>
+      <span class="nav-toggle" id="navToggle">&#9776;</span>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tools.html">Toolkit</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">Learn More</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="phishshield.html" class="active-link">Phish Shield</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="toolkit-container" data-aos="fade-up">
+      <h2>Phish Shield: Email Phishing Checker</h2>
+      <p class="section-subtitle">Scan emails for phishing threats using AI — free for up to 3 scans per day.</p>
+
+      <label for="emailText">Paste suspicious email content:</label>
+      <textarea id="emailText" placeholder="e.g., Your account was suspended..." rows="8"></textarea>
+
+      <button class="btn-check" onclick="analyzeEmail()">Analyze Email</button>
+      
+      <div class="limit-warning" id="limitWarning" style="display:none;">
+        ⚠️ You've hit your free scan limit.
+        <a href="https://buy.stripe.com/test_6oEg1ef5rfL4cGA3cc" target="_blank" rel="noopener noreferrer">Upgrade to Pro</a> for unlimited scans.
+      </div>
+
+      <div id="result" class="output-box"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/sanocyber" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px;">
+        <span style="margin-left: 5px;">Instagram</span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script> 
+
+  <script>
+    // PhishShield specific JavaScript
+    const SCAN_LIMIT = 25;
+    const SCAN_KEY = 'phishshield-scan-count';
+    const RESET_KEY = 'phishshield-scan-date';
+
+    function resetDailyCount() {
+      const today = new Date().toISOString().split('T')[0];
+      localStorage.setItem(RESET_KEY, today);
+      localStorage.setItem(SCAN_KEY, '0');
+    }
+
+    function checkAndUpdateCount() {
+      const today = new Date().toISOString().split('T')[0];
+      const lastDate = localStorage.getItem(RESET_KEY);
+      if (lastDate !== today) resetDailyCount();
+
+      let count = parseInt(localStorage.getItem(SCAN_KEY) || '0', 10);
+      if (count >= SCAN_LIMIT) return false;
+      localStorage.setItem(SCAN_KEY, String(count + 1));
+      return true;
+    }
+
+    async function analyzeEmail() {
+      const emailText = document.getElementById('emailText').value.trim();
+      const resultDiv = document.getElementById('result');
+      const limitWarning = document.getElementById('limitWarning');
+
+      if (!checkAndUpdateCount()) {
+        limitWarning.style.display = 'block'; // Control display with JS
+        resultDiv.innerHTML = '';
+        return;
+      }
+
+      limitWarning.style.display = 'none'; // Control display with JS
+      resultDiv.innerHTML = 'Analyzing...';
+
+      try {
+        // Ensure you replace 'https://your-backend-url.onrailway.app/analyze' with your actual backend URL
+        const response = await fetch('https://bitter-mud-23b3.glen-grevatt8855.workers.dev', { 
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ emailText })
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        resultDiv.innerText = data.result || 'No valid response received from the analysis.';
+      } catch (err) {
+        console.error("Error analyzing email:", err);
+
+        // Try reading error response from the API
+        try {
+          const errorText = await err.response?.text?.();
+          resultDiv.innerText = `Server Error: ${errorText || err.message || 'Unknown error'}`;
+        } catch {
+          resultDiv.innerText = `Client Error: ${err.message || 'Unexpected failure'}`;
+        }
+      }
+
+
+    }
+
+    // Footer year update is handled by script.js, but if not, uncomment the line below
+    // document.getElementById("year").textContent = new Date().getFullYear();
+
+    // AOS initialization is now handled by script.js
+    // If script.js doesn't initialize AOS, you would add:
+    // AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>
