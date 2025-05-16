@@ -140,9 +140,9 @@ header {
 }
 
 .section h2 { /* Style for main section headings */
-    font-size: 2.2rem; /* Slightly larger heading */
-    margin-bottom: 0.75rem;
-    color: #050b2a; /* Dark blue color */
+  font-size: 2.2rem; /* Slightly larger heading */
+  margin-bottom: 0.75rem;
+  color: #050b2a; /* Dark blue color */
 }
 
 .section-subtitle { /* Style the subtitle */
@@ -293,9 +293,9 @@ header {
 }
 
 .pricing-tier p {
-    text-align: left; /* Ensure paragraphs are left-aligned */
-    margin-bottom: 1rem;
-    flex-grow: 1; /* Allow paragraph to grow */
+  text-align: left; /* Ensure paragraphs are left-aligned */
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Allow paragraph to grow */
 }
 
 .pricing-tier small {
@@ -305,13 +305,13 @@ header {
 }
 
 .pricing-tier .btn-primary { /* Style button within tier */
-    margin-top: 1rem; /* Add space above button */
-    align-self: center; /* Center button horizontally */
+  margin-top: 1rem; /* Add space above button */
+  align-self: center; /* Center button horizontally */
 }
 
 .pricing-tier .btn-primary[disabled] { /* Style the disabled button */
-    background-color: #ccc;
-    cursor: not-allowed;
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 /* ============================================= */
@@ -361,7 +361,7 @@ header {
 
 
 .toolkit-container input[type="checkbox"] {
-    margin-right: 0.5rem; /* Space next to checkbox */
+  margin-right: 0.5rem; /* Space next to checkbox */
 }
 
 .output-box, #result {
@@ -379,8 +379,8 @@ header {
 
 
 /* #result is already targeted by .output-box, but if you need specific styles for #result in breach checker */
-#result strong { 
-    color: #d9534f; /* Reddish color for emphasis on breach count */
+#result strong {
+  color: #d9534f; /* Reddish color for emphasis on breach count */
 }
 /* #result can also be used for PhishShield, so the strong tag might not always be relevant */
 
@@ -431,60 +431,60 @@ header {
 /* Styles primarily for blog.html, terms.html, about.html */
 
 .info-block { /* Used on About and Terms pages */
-    background-color: #ffffff;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    border: 1px solid #eee;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
 }
 
 .info-block h2 {
-    text-align: left; /* Override section center alignment */
-    margin-bottom: 0.75rem;
-    color: #1f3bb3;
+  text-align: left; /* Override section center alignment */
+  margin-bottom: 0.75rem;
+  color: #1f3bb3;
 }
 
 .info-block p {
-    text-align: left; /* Override section center alignment */
+  text-align: left; /* Override section center alignment */
 }
 
 .blog-post { /* Styles for blog.html articles */
-    background-color: #ffffff;
-    padding: 2rem;
-    margin: 2rem auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    border: 1px solid #eee;
-    text-align: left; /* Ensure blog text is left-aligned */
+  background-color: #ffffff;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+  text-align: left; /* Ensure blog text is left-aligned */
 }
 
 .blog-post h2 {
-    text-align: left; /* Override general section alignment */
-    margin-bottom: 0.5rem;
-    color: #1f3bb3;
+  text-align: left; /* Override general section alignment */
+  margin-bottom: 0.5rem;
+  color: #1f3bb3;
 }
 
 .blog-post p, .blog-post ul {
-    text-align: left; /* Ensure paragraphs and lists are left-aligned */
-    margin-bottom: 1rem;
+  text-align: left; /* Ensure paragraphs and lists are left-aligned */
+  margin-bottom: 1rem;
 }
 .blog-post ul {
-    padding-left: 2rem; /* Indent lists */
-    list-style: disc; /* Use standard bullets */
+  padding-left: 2rem; /* Indent lists */
+  list-style: disc; /* Use standard bullets */
 }
 .blog-post small {
-    color: #777;
-    display: block;
-    margin-bottom: 1rem;
+  color: #777;
+  display: block;
+  margin-bottom: 1rem;
 }
 .blog-post a {
-    color: #007bff;
-    text-decoration: none;
+  color: #007bff;
+  text-decoration: none;
 }
 .blog-post a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 
@@ -529,7 +529,7 @@ header {
   vertical-align: middle; /* Align image better with text */
 }
 .social-icons span {
-    vertical-align: middle; /* Align text better with image */
+  vertical-align: middle; /* Align text better with image */
 }
 
 
@@ -564,10 +564,10 @@ header {
   }
 
   header {
-      padding: 0.8rem 1rem; /* Adjust header padding */
+    padding: 0.8rem 1rem; /* Adjust header padding */
   }
   .logo {
-      font-size: 1.3rem; /* Smaller logo */
+    font-size: 1.3rem; /* Smaller logo */
   }
 
   .hero {
@@ -579,14 +579,14 @@ header {
     padding: 1.5rem;
   }
   .hero-content h1 {
-      font-size: 1.8rem; /* Adjust hero heading size */
+    font-size: 1.8rem; /* Adjust hero heading size */
   }
 
   .section {
-      padding: 2rem 0.5rem; /* Reduce section padding */
+    padding: 2rem 0.5rem; /* Reduce section padding */
   }
   .section h2 {
-      font-size: 1.8rem; /* Reduce section heading size */
+    font-size: 1.8rem; /* Reduce section heading size */
   }
 
   .services-grid,
@@ -597,24 +597,24 @@ header {
   }
   .service-card,
   .pricing-tier {
-      padding: 1rem; /* Reduce card padding */
+    padding: 1rem; /* Reduce card padding */
   }
 
   .toolkit-container {
-      margin: 2rem auto;
-      padding: 1.5rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
   }
   .btn-copy, .btn-check {
-      width: 100%; /* Make buttons full width */
-      margin-right: 0; /* Remove right margin */
-      margin-bottom: 0.5rem; /* Add bottom margin */
+    width: 100%; /* Make buttons full width */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 0.5rem; /* Add bottom margin */
   }
   .btn-copy:last-of-type, .btn-check:last-of-type {
-      margin-bottom: 0; /* Remove margin from last button */
+    margin-bottom: 0; /* Remove margin from last button */
   }
 
   .footer {
-      padding: 1rem 0.5rem;
-      margin-top: 2rem;
+    padding: 1rem 0.5rem;
+    margin-top: 2rem;
   }
 }
