@@ -317,7 +317,7 @@ header {
 /* ============================================= */
 /* =============== TOOLKIT ===================== */
 /* ============================================= */
-/* Styles for tools.html page */
+/* Styles for tools.html page AND phishshield.html */
 
 .toolkit-container {
   max-width: 700px;
@@ -343,26 +343,34 @@ header {
 }
 
 .toolkit-container input[type="number"],
-.toolkit-container input[type="password"] {
+.toolkit-container input[type="password"],
+.toolkit-container textarea { /* ADDED textarea here */
   width: 100%;
   padding: 0.75rem;
   border-radius: 5px;
   border: 1px solid #ccc;
   margin-top: 0.5rem;
   font-size: 1rem;
+  box-sizing: border-box; /* Ensures padding doesn't add to width */
 }
+
+.toolkit-container textarea { /* Specific textarea styling if needed, e.g., line-height */
+  line-height: 1.5; /* Improves readability for multi-line text */
+  min-height: 120px; /* Give textarea a decent default height */
+}
+
 
 .toolkit-container input[type="checkbox"] {
     margin-right: 0.5rem; /* Space next to checkbox */
 }
 
-.output-box, #result {
+.output-box, #result { /* #result is used in phishshield.html and tools.html */
   margin: 1.5rem 0; /* Increased margin */
   padding: 1rem;
   background: #f0f0f0; /* Slightly different background */
   font-size: 1.1rem; /* Adjusted size */
   border-radius: 6px;
-  word-break: break-all; /* Break long passwords */
+  word-break: break-all; /* Break long passwords/text */
   min-height: 50px; /* Ensure it has some height */
   display: flex;
   align-items: center;
@@ -371,12 +379,12 @@ header {
   border: 1px solid #ddd;
 }
 
-#result strong { /* Style the count in breach checker */
-    color: #d9534f; /* Reddish color for emphasis */
+/* #result is already targeted by .output-box, but if you need specific styles for #result in breach checker */
+#result strong { 
+    color: #d9534f; /* Reddish color for emphasis on breach count */
 }
-#result { /* Add specific styles for breach checker result */
-    font-weight: bold;
-}
+/* #result can also be used for PhishShield, so the strong tag might not always be relevant */
+
 
 .btn-copy, .btn-check {
   background: #1f3bb3; /* Match theme */
@@ -393,6 +401,29 @@ header {
 
 .btn-copy:hover, .btn-check:hover {
   background: #050b2a; /* Darker theme color on hover */
+}
+
+/* NEW Styles for Limit Warning on PhishShield page */
+.limit-warning {
+  color: #721c24; /* Darker red for text for better contrast on light red background */
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #f8d7da; /* Light red background for emphasis */
+  border: 1px solid #f5c6cb; /* Border to match background */
+  border-radius: 5px;
+  text-align: center;
+  /* display: none; /* This will be controlled by JavaScript: shown when limit is hit */
+}
+
+.limit-warning a {
+  color: #721c24; /* Darker red for link within warning */
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.limit-warning a:hover {
+  color: #491217; /* Even darker red for hover */
+  text-decoration: none;
 }
 
 /* ============================================= */
