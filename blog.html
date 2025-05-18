@@ -2,23 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" 
+        content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; 
+                 script-src * 'unsafe-inline' 'unsafe-eval' data: blob: https://js.stripe.com https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://unpkg.com; 
+                 connect-src * data: blob:; 
+                 style-src * 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com; 
+                 img-src * data: blob:;
+                 font-src * https://fonts.gstatic.com;
+                 frame-src * data: blob: https://js.stripe.com;">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Stay informed with cybersecurity tips, password advice, phishing protection, and practical online safety guides from SanoCyber.">
   <meta name="keywords" content="cybersecurity blog, online safety, password security, phishing tips, SanoCyber, Tailwind CSS">
   <meta name="author" content="SanoCyber">
   <meta name="robots" content="index, follow">
-  <title>Cybersecurity Blog | SanoCyber Tips & Advice (Tailwind)</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Cybersecurity Blog | SanoCyber Tips & Advice (Updated)</title>
+  
+  <link rel="stylesheet" href="style.css"> <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"> <script src="https://cdn.tailwindcss.com"></script> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> <script src="https://js.stripe.com/v3/" async></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
   <style>
     /* Apply Inter font globally */
     body {
       font-family: 'Inter', sans-serif;
       color: #374151; /* Tailwind gray-700 */
     }
-    /* Mobile nav 'active' class styles are in style.css (minimal_style_css_v1) */
+    /* Mobile nav 'active' class styles are defined in your style.css */
   </style>
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
@@ -28,13 +37,15 @@
     <a href="index.html" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors">SanoCyber</a>
     <span class="nav-toggle md:hidden text-3xl text-gray-700 cursor-pointer" id="navToggle">&#9776;</span>
     <nav>
-      <ul class="nav-links hidden md:flex space-x-6 items-center" id="navLinks">
-        <li><a href="index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a></li>
-        <li><a href="tools.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Toolkit</a></li>
-        <li><a href="blog.html" class="text-blue-600 font-semibold border-b-2 border-blue-600 pb-1">Blog</a></li>
-        <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Learn More</a></li>
-        <li><a href="terms.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Terms</a></li>
-        <li><a href="phishshield.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">PhishShield</a></li>
+      <ul class="nav-links hidden md:flex space-x-4 items-center" id="navLinks">
+        <li><a href="index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">Home</a></li>
+        <li><a href="tools.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">Toolkit</a></li>
+        <li><a href="blog.html" class="text-blue-600 font-semibold border-b-2 border-blue-600 px-2 py-1">Blog</a></li>
+        <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">Learn More</a></li>
+        <li><a href="terms.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">Terms</a></li>
+        <li><a href="phishshield.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">PhishShield</a></li>
+        <li><a href="#signup" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-3 rounded-md transition-colors shadow-sm text-sm">Sign Up</a></li>
+        <li><a href="#login" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-3 rounded-md transition-colors shadow-sm text-sm">Login</a></li>
       </ul>
     </nav>
   </div>
@@ -48,34 +59,38 @@
     <div class="space-y-12 max-w-3xl mx-auto">
       <article class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
         <h2 class="text-2xl md:text-3xl font-semibold mb-2 text-blue-700">🔒 5 Mistakes People Make with Passwords (and How to Fix Them)</h2>
-        <p class="text-sm text-gray-500 mb-4">Published: May 2, 2025</p>
-        <p class="text-gray-700 leading-relaxed mb-4">Passwords protect your most important information — but small mistakes can leave you vulnerable. Here are five common mistakes people make:</p>
-        <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4 pl-4">
-          <li><strong>Reusing passwords</strong> — Always create a unique password for each account.</li>
-          <li><strong>Choosing weak passwords</strong> — Avoid obvious choices like "password123" or your birthday.</li>
-          <li><strong>Never updating passwords</strong> — Refresh critical passwords every 6–12 months.</li>
-          <li><strong>Trusting phishing emails</strong> — Always verify links before entering passwords.</li>
-          <li><strong>Saving passwords in browsers</strong> — Use a secure password manager instead.</li>
-        </ul>
-        <p class="text-gray-700 leading-relaxed">Need help setting up a password manager? <a href="index.html#contact" class="text-blue-600 hover:text-blue-800 underline font-medium">Contact me</a> — I'll guide you!</p>
+        <p class="text-sm text-gray-500 mb-4"><span class="font-medium">Published:</span> May 2, 2025</p> {/* Assuming a future date for example */}
+        <div class="prose prose-sm sm:prose-base lg:prose-lg max-w-none text-gray-700 leading-relaxed">
+          <p>Passwords protect your most important information — but small mistakes can leave you vulnerable. Here are five common mistakes people make:</p>
+          <ul class="list-disc space-y-1 pl-5">
+            <li><strong>Reusing passwords</strong> — Always create a unique password for each account.</li>
+            <li><strong>Choosing weak passwords</strong> — Avoid obvious choices like "password123" or your birthday.</li>
+            <li><strong>Never updating passwords</strong> — Refresh critical passwords every 6–12 months.</li>
+            <li><strong>Trusting phishing emails</strong> — Always verify links before entering passwords.</li>
+            <li><strong>Saving passwords in browsers</strong> — Use a secure password manager instead.</li>
+          </ul>
+          <p>Need help setting up a password manager? <a href="index.html#contact" class="text-blue-600 hover:text-blue-800 underline font-medium">Contact me</a> — I'll guide you!</p>
+        </div>
       </article>
 
       <hr class="border-t-2 border-gray-200 my-8 md:my-12">
 
       <article class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
         <h2 class="text-2xl md:text-3xl font-semibold mb-2 text-blue-700">📧 How to Spot a Phishing Email: 7 Red Flags to Watch For</h2>
-        <p class="text-sm text-gray-500 mb-4">Published: May 2, 2025</p>
-        <p class="text-gray-700 leading-relaxed mb-4">Phishing emails are fake messages designed to steal your passwords or personal data. Watch for these warning signs:</p>
-        <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4 pl-4">
-          <li><strong>Generic greetings</strong> — Like "Dear Customer" instead of using your name.</li>
-          <li><strong>Urgency or threats</strong> — Messages saying "act now" or "your account will be locked."</li>
-          <li><strong>Unfamiliar sender addresses</strong> — Email addresses that look suspicious or misspelled.</li>
-          <li><strong>Unexpected attachments</strong> — These could carry malware.</li>
-          <li><strong>Fake links</strong> — Hover to preview the real website before clicking.</li>
-          <li><strong>Spelling errors</strong> — Poor grammar is often a giveaway.</li>
-          <li><strong>Requests for sensitive info</strong> — Real companies never ask for passwords by email.</li>
-        </ul>
-        <p class="text-gray-700 leading-relaxed">When in doubt, don't click — visit the company website directly or call support!</p>
+        <p class="text-sm text-gray-500 mb-4"><span class="font-medium">Published:</span> May 2, 2025</p> {/* Assuming a future date for example */}
+        <div class="prose prose-sm sm:prose-base lg:prose-lg max-w-none text-gray-700 leading-relaxed">
+          <p>Phishing emails are fake messages designed to steal your passwords or personal data. Watch for these warning signs:</p>
+          <ul class="list-disc space-y-1 pl-5">
+            <li><strong>Generic greetings</strong> — Like "Dear Customer" instead of using your name.</li>
+            <li><strong>Urgency or threats</strong> — Messages saying "act now" or "your account will be locked."</li>
+            <li><strong>Unfamiliar sender addresses</strong> — Email addresses that look suspicious or misspelled.</li>
+            <li><strong>Unexpected attachments</strong> — These could carry malware.</li>
+            <li><strong>Fake links</strong> — Hover to preview the real website before clicking.</li>
+            <li><strong>Spelling errors</strong> — Poor grammar is often a giveaway.</li>
+            <li><strong>Requests for sensitive info</strong> — Real companies never ask for passwords by email.</li>
+          </ul>
+          <p>When in doubt, don't click — visit the company website directly or call support!</p>
+        </div>
       </article>
     </div>
   </section>
@@ -84,41 +99,15 @@
 <footer class="bg-gray-800 text-gray-300 py-10 text-center mt-auto rounded-t-xl shadow-inner">
   <div class="container mx-auto">
     <p class="mb-4">&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
-    <div class="social-icons">
+    <div class="social-icons mt-4"> 
       <a href="https://instagram.com/sanocyber" target="_blank" rel="noopener" class="inline-flex items-center mx-2 hover:text-sky-400 transition duration-300">
-        <img src="https://placehold.co/30x30/ffffff/sky400?text=IG&font=fontawesome" alt="Instagram" class="w-7 h-7 rounded-full" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png'; this.onerror=null;">
+        <img src="https://placehold.co/30x30/ffffff/sky400?text=IG" alt="Instagram" class="w-7 h-7 rounded-full" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png'; this.onerror=null;">
         <span class="ml-2 sr-only">Instagram</span>
       </a>
     </div>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="script.js"></script>
-<script>
-  // Initialize AOS
-  if (typeof AOS !== 'undefined') {
-    AOS.init({
-      duration: 800,
-      once: true,
-      offset: 50,
-    });
-  }
-
-  // Mobile navigation toggle (example, ideally in script.js)
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active'); // Relies on .active styles in style.css
-    });
-  }
-
-  // Set current year in footer (example, ideally in script.js)
-  const yearSpan = document.getElementById('year');
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
-</script>
 </body>
 </html>
