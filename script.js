@@ -53,101 +53,68 @@ document.addEventListener('DOMContentLoaded', function () {
     console.warn("AOS library not found. Ensure aos.js is linked in HTML <head> before this script.");
   }
 
-  // --- Stripe Checkout Integration ---
-  // console.log("Setting up Stripe Checkout Integration (Live Mode)...");
-  // IMPORTANT: Use your ACTUAL LIVE Stripe Publishable Key
-  const STRIPE_PUBLISHABLE_KEY = 'pk_live_51RPgrWJ2AdfUeYzb2xTAkDOrGh4AahXEdSXHDX90f64OJZVgUXFgNhBnSEn6X4TfL20L40IGKxDbePI1NEXgPXOk00AeSeQS3z'; // REPLACE THIS WITH YOUR LIVE KEY
   
-  if (typeof Stripe === 'function') {
-    const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
-    // console.log("Stripe object initialized for checkout (Live Mode).");
+  // --- Stripe Checkout Integration ---
+  const STRIPE_PUBLISHABLE_KEY = 'pk_live_51RPgrWJ2AdfUeYzb2xTAkDOrGh4AahXEdSXHDX90f64OJZVgUXFgNhBnSEn6X4TfL20L40IGKxDbePI1NEXgPXOk00AeSeQS3z';
+  const createCheckoutSessionWorkerUrl = 'https://sanocyber-checkout-worker.glen-grevatt8855.workers.dev';
 
-    const createCheckoutSessionWorkerUrl = 'https://sanocyber-checkout-worker.glen-grevatt8855.workers.dev'; 
+  function checkStripeReady(callback) {
+    let attempts = 0;
+    const maxAttempts = 10;
+    const interval = setInterval(() => {
+      if (typeof Stripe === 'function') {
+        clearInterval(interval);
+        callback(Stripe(STRIPE_PUBLISHABLE_KEY));
+      } else {
+        attempts++;
+        if (attempts >= maxAttempts) {
+          clearInterval(interval);
+          console.error("Stripe.js failed to load after multiple attempts.");
+          if (document.getElementById('goProButtonHomepage') || document.getElementById('goProButtonPhishShieldPage')) {
+            alert("⚠️ Payment system failed to load. Please refresh or try another browser.");
+          }
+        }
+      }
+    }, 300);
+  }
 
+  checkStripeReady((stripe) => {
     async function redirectToCheckout() {
-      console.log('redirectToCheckout FUNCTION CALLED.');
       try {
-        console.log('Attempting to create checkout session with worker:', createCheckoutSessionWorkerUrl);
-
         const response = await fetch(createCheckoutSessionWorkerUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
         });
-        
-        console.log("Response status from worker:", response.status);
-        const responseText = await response.text(); 
-        console.log("Raw response text from worker:", responseText);
 
-        if (!response.ok) {
-          let errorData = { message: `Request to worker failed with status ${response.status}. Response: ${responseText}` };
-          try { 
-            errorData = JSON.parse(responseText); 
-            // If errorData.error is an object, use its message, otherwise use errorData.message
-            if (errorData.error && typeof errorData.error === 'object' && errorData.error.message) {
-                throw new Error(errorData.error.message);
-            } else if (errorData.message) {
-                throw new Error(errorData.message);
-            }
-          } catch (e) {
-            // If parsing failed or no specific message, throw a generic one based on status
-            console.error("Could not parse error response from worker as JSON or extract specific message. Raw text was:", responseText);
-            throw new Error(`HTTP error ${response.status} from worker. See console for raw response.`);
-          }
-          // This line should ideally not be reached if the above throw works
-          throw new Error(errorData.error?.message || errorData.message || `HTTP error! Status: ${response.status}`);
-        }
-        
-        const session = JSON.parse(responseText); 
-        console.log("Received session data from worker:", session);
+        const responseText = await response.text();
+        if (!response.ok) throw new Error(`Worker error: ${response.status} - ${responseText}`);
 
+        const session = JSON.parse(responseText);
         if (session.sessionId) {
-          console.log('Checkout session ID received:', session.sessionId, 'Redirecting to Stripe...');
           const { error } = await stripe.redirectToCheckout({ sessionId: session.sessionId });
           if (error) {
-            console.error('Stripe redirectToCheckout error:', error.message);
+            console.error("Stripe redirect error:", error.message);
             alert(`Could not redirect to Stripe: ${error.message}`);
-          } else {
-            console.log("stripe.redirectToCheckout was called, browser should be redirecting.");
           }
-        } else if (session.error) {
-          console.error('Backend error creating session (from worker response):', session.error.message || session.error);
-          alert(`Error from server: ${session.error.message || session.error}`);
         } else {
-          console.error('Unknown error creating session. Worker response:', session);
-          alert('Could not initiate payment due to an unknown server error. Please try again.');
+          throw new Error(session.error?.message || "Unknown error from server.");
         }
       } catch (error) {
-        console.error('Fetch error or other client-side error in redirectToCheckout:', error);
-        alert(`An error occurred: ${error.message}. Please check your connection and try again.`);
+        console.error("RedirectToCheckout Error:", error);
+        alert(`Payment error: ${error.message}`);
       }
     }
 
     const goProButtonHomepage = document.getElementById('goProButtonHomepage');
     if (goProButtonHomepage) {
-      goProButtonHomepage.addEventListener('click', redirectToCheckout); 
-      // console.log("Event listener ADDED to goProButtonHomepage.");
-    } else {
-      // This is normal if the button isn't on the current page
-      // console.warn("goProButtonHomepage was NOT FOUND on this page.");
+      goProButtonHomepage.addEventListener('click', redirectToCheckout);
     }
 
     const goProButtonPhishShieldPage = document.getElementById('goProButtonPhishShieldPage');
     if (goProButtonPhishShieldPage) {
       goProButtonPhishShieldPage.addEventListener('click', redirectToCheckout);
-      // console.log("Event listener ADDED to goProButtonPhishShieldPage.");
-    } else {
-      // This is normal if the button isn't on the current page
-      // console.warn("goProButtonPhishShieldPage was NOT FOUND on this page.");
     }
-  } else {
-    console.error("Stripe.js V3 library not loaded. Stripe functionality will be unavailable.");
-    // Only alert if a Stripe-dependent button is present, to avoid annoying users on pages without payment buttons.
-    if (document.getElementById('goProButtonHomepage') || document.getElementById('goProButtonPhishShieldPage')) {
-        alert("Payment system library failed to load. Please check your internet connection or ad-blockers.");
-    }
-  }
-  // console.log("Stripe integration setup attempt complete.");
-
+  });
 
   // --- Page-Specific Functionality ---
   function onPage(elementId) { return document.getElementById(elementId) !== null; }
