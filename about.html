@@ -4,67 +4,114 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Learn more about Glen at SanoCyber. Discover my passion for cybersecurity and how I help individuals and families protect their digital lives.">
-  <meta name="keywords" content="about SanoCyber, cybersecurity services, online privacy, Glen SanoCyber">
+  <meta name="keywords" content="about SanoCyber, cybersecurity services, online privacy, Glen SanoCyber, Tailwind CSS">
   <meta name="author" content="SanoCyber">
   <meta name="robots" content="index, follow">
-  <title>About SanoCyber | Protecting Your Digital World</title>
+  <title>About SanoCyber | Protecting Your Digital World (Tailwind)</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Apply Inter font globally if not overriding Tailwind's defaults */
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #374151; /* Tailwind gray-700 */
+    }
+    /* Additional custom styles can go here if absolutely necessary */
+    /* Mobile nav 'active' class styles are in style.css (minimal_style_css_v1) */
+  </style>
 </head>
-<body>
-<header data-aos="fade-down" data-aos-duration="1000">
-  <div class="nav-container">
-    <a href="index.html" class="logo">SanoCyber</a>
-    <span class="nav-toggle" id="navToggle">&#9776;</span>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4 flex items-center justify-between py-3">
+    <a href="index.html" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors">SanoCyber</a>
+    <span class="nav-toggle md:hidden text-3xl text-gray-700 cursor-pointer" id="navToggle">&#9776;</span>
     <nav>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tools.html">Toolkit</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html" class="active-link">Learn More</a></li>
-        <li><a href="terms.html">Terms</a></li>
-        <li><a href="phishshield.html">PhishShield</a></li>
+      <ul class="nav-links hidden md:flex space-x-6 items-center" id="navLinks">
+        <li><a href="index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a></li>
+        <li><a href="tools.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Toolkit</a></li>
+        <li><a href="blog.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Blog</a></li>
+        <li><a href="about.html" class="text-blue-600 font-semibold border-b-2 border-blue-600 pb-1">Learn More</a></li>
+        <li><a href="terms.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Terms</a></li>
+        <li><a href="phishshield.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">PhishShield</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<main>
-<section class="section" data-aos="fade-up">
-  <h1>All About SanoCyber</h1>
-  <p class="section-subtitle">Helping you stay secure without the tech overload</p>
+<main class="flex-grow">
+  <section class="py-12 md:py-16 px-4 container mx-auto" data-aos="fade-in">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-gray-800">All About SanoCyber</h1>
+    <p class="text-lg text-center text-gray-600 mb-10 md:mb-12">Helping you stay secure without the tech overload</p>
 
-  <div class="info-block service-card" data-aos="fade-up" data-aos-delay="100">
-    <h2>My Mission</h2>
-    <p>Hi, I'm Glen — founder of SanoCyber. I'm passionate about protecting people from digital threats. With years of experience building computers and studying cybersecurity, I offer tailored services to individuals and families who want real-world protection without confusing jargon.</p>
-  </div>
+    <div class="space-y-8 max-w-3xl mx-auto">
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="text-2xl font-semibold mb-3 text-blue-700">My Mission</h2>
+        <p class="text-gray-700 leading-relaxed">Hi, I'm Glen — founder of SanoCyber. I'm passionate about protecting people from digital threats. With years of experience building computers and studying cybersecurity, I offer tailored services to individuals and families who want real-world protection without confusing jargon.</p>
+      </div>
 
-  <div class="info-block service-card" data-aos="fade-up" data-aos-delay="200">
-    <h2>What I Offer</h2>
-    <p>From password management to phishing awareness to home Wi-Fi security, I help you safeguard your digital life with simple, effective solutions. Whether you need a security checkup, training, or advice, SanoCyber is here to help.</p>
-  </div>
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="text-2xl font-semibold mb-3 text-blue-700">What I Offer</h2>
+        <p class="text-gray-700 leading-relaxed">From password management to phishing awareness to home Wi-Fi security, I help you safeguard your digital life with simple, effective solutions. Whether you need a security checkup, training, or advice, SanoCyber is here to help.</p>
+      </div>
 
-  <div class="info-block service-card" data-aos="fade-up" data-aos-delay="300">
-    <h2>Why Choose Me?</h2>
-    <p>Unlike corporate providers, I offer personalized, local service. I believe cybersecurity should be accessible to everyone — not just tech experts or big businesses.</p>
-  </div>
-</section>
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+        <h2 class="text-2xl font-semibold mb-3 text-blue-700">Why Choose Me?</h2>
+        <p class="text-gray-700 leading-relaxed">Unlike corporate providers, I offer personalized, local service. I believe cybersecurity should be accessible to everyone — not just tech experts or big businesses.</p>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="footer">
-  <p>&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
-  <div class="social-icons">
-    <a href="https://instagram.com/sanocyber" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px;">
-      <span style="margin-left: 5px;">Instagram</span>
-    </a>
+<footer class="bg-gray-800 text-gray-300 py-10 text-center mt-auto rounded-t-xl shadow-inner">
+  <div class="container mx-auto">
+    <p class="mb-4">&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/sanocyber" target="_blank" rel="noopener" class="inline-flex items-center mx-2 hover:text-sky-400 transition duration-300">
+        <img src="https://placehold.co/30x30/ffffff/sky400?text=IG&font=fontawesome" alt="Instagram" class="w-7 h-7 rounded-full" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png'; this.onerror=null;">
+        <span class="ml-2 sr-only">Instagram</span>
+      </a>
+      </div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="script.js"></script>
 <script>
-AOS.init({ duration: 1000, once: true });
+  // Initialize AOS (Animate On Scroll)
+  // This might be in your script.js, if so, this is redundant
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 800, // Animation duration
+      once: true,    // Whether animation should happen only once - while scrolling down
+      offset: 50,   // Offset (in px) from the original trigger point
+    });
+  }
+
+  // Mobile navigation toggle (example, ideally in script.js)
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active'); // Relies on .active styles in style.css
+      // For a pure Tailwind approach without relying on style.css for .active:
+      // navLinks.classList.toggle('hidden');
+      // navLinks.classList.toggle('md:flex'); // to ensure it only affects mobile
+      // if (navLinks.classList.contains('hidden')) {
+      //   navLinks.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'right-0', 'bg-white', 'shadow-lg', 'py-4', 'space-y-2', 'md:hidden');
+      // } else {
+      //   navLinks.classList.add('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'right-0', 'bg-white', 'shadow-lg', 'py-4', 'space-y-2', 'md:hidden');
+      // }
+    });
+  }
+
+  // Set current year in footer (example, ideally in script.js)
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 </script>
 </body>
 </html>

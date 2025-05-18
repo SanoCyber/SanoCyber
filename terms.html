@@ -3,97 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Terms and conditions for using SanoCyber cybersecurity services, including service details, payments, and client responsibilities.">
-  <meta name="keywords" content="terms of service, cybersecurity terms, SanoCyber policies">
+  <meta name="description" content="Terms and conditions for using SanoCyber cybersecurity services, including service details, payments, and client responsibilities. Tailwind CSS version.">
+  <meta name="keywords" content="terms of service, cybersecurity terms, SanoCyber policies, Tailwind CSS">
   <meta name="author" content="SanoCyber">
   <meta name="robots" content="index, follow">
-  <title>Terms and Conditions | SanoCyber</title>
+  <title>Terms and Conditions | SanoCyber (Tailwind)</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Apply Inter font globally */
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #374151; /* Tailwind gray-700 */
+    }
+    /* Mobile nav 'active' class styles are in style.css (minimal_style_css_v1) */
+  </style>
 </head>
-<body>
-<header data-aos="fade-down" data-aos-duration="1000">
-  <div class="nav-container">
-    <a href="index.html" class="logo">SanoCyber</a>
-    <span class="nav-toggle" id="navToggle">&#9776;</span>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4 flex items-center justify-between py-3">
+    <a href="index.html" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors">SanoCyber</a>
+    <span class="nav-toggle md:hidden text-3xl text-gray-700 cursor-pointer" id="navToggle">&#9776;</span>
     <nav>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tools.html">Toolkit</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">Learn More</a></li>
-        <li><a href="terms.html" class="active-link">Terms</a></li>
-        <li><a href="phishshield.html">PhishShield</a></li>
+      <ul class="nav-links hidden md:flex space-x-6 items-center" id="navLinks">
+        <li><a href="index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a></li>
+        <li><a href="tools.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Toolkit</a></li>
+        <li><a href="blog.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Blog</a></li>
+        <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Learn More</a></li>
+        <li><a href="terms.html" class="text-blue-600 font-semibold border-b-2 border-blue-600 pb-1">Terms</a></li>
+        <li><a href="phishshield.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">PhishShield</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<main>
-<section class="section" data-aos="fade-in">
-  <h1>Terms and Conditions</h1>
+<main class="flex-grow">
+  <section class="py-12 md:py-16 px-4 container mx-auto" data-aos="fade-in">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 md:mb-12 text-gray-800">Terms and Conditions</h1>
 
-  <div class="info-block service-card" data-aos="fade-up" data-aos-delay="100">
-    <h2>1. Introduction</h2>
-    <p>Welcome to SanoCyber. By using my services, you agree to these terms and conditions. Please read them carefully before engaging with any service.</p>
-  </div>
+    <div class="space-y-6 max-w-3xl mx-auto">
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">1. Introduction</h2>
+        <p class="text-gray-700 leading-relaxed">Welcome to SanoCyber. By using our services, you agree to these terms and conditions. Please read them carefully before engaging with any service.</p>
+      </div>
 
-  <div class="info-block service-card" data-aos="fade-up" data-aos-delay="150">
-    <h2>2. Services Offered</h2>
-    <p>I provide cybersecurity services, including Digital Security Checkups, Password Manager Setup, Phishing Awareness Training, and Home Network Security assessments. All services are provided on a best-effort basis.</p>
-  </div>
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="150">
+        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">2. Services Offered</h2>
+        <p class="text-gray-700 leading-relaxed">We provide cybersecurity services, including Digital Security Checkups, Password Manager Setup, Phishing Awareness Training, and Home Network Security assessments. All services are provided on a best-effort basis.</p>
+      </div>
 
-  <div class="info-block service-card" data-aos="fade-up" data-aos-delay="200">
-    <h2>3. Payment and Pricing</h2>
-    <p>Pricing depends on the type of service, number of devices, and any required software. Full payment is due upon service completion unless otherwise agreed. Payments are accepted via cash, bank transfer, or PayPal.</p>
-  </div>
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">3. Payment and Pricing</h2>
+        <p class="text-gray-700 leading-relaxed">Pricing depends on the type of service, number of devices, and any required software. Full payment is due upon service completion unless otherwise agreed. Payments are accepted via cash, bank transfer, or PayPal.</p>
+      </div>
 
-  <div class="info-block service-card" data-aos="fade-up" data-aos-delay="250">
-    <h2>4. Cancellations and Refunds</h2>
-    <p>Appointments may be canceled or rescheduled with at least 24 hours' notice. Refunds are only offered for services undelivered due to my error.</p>
-  </div>
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="250">
+        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">4. Cancellations and Refunds</h2>
+        <p class="text-gray-700 leading-relaxed">Appointments may be canceled or rescheduled with at least 24 hours' notice. Refunds are only offered for services undelivered due to our error.</p>
+      </div>
 
-  <div class="info-block service-card" data-aos="fade-up" data-aos-delay="300">
-    <h2>5. Client Responsibilities</h2>
-    <p>Clients are responsible for providing accurate device information and ensuring availability at the scheduled time. I am not liable for delays caused by incomplete or inaccurate information.</p>
-  </div>
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">5. Client Responsibilities</h2>
+        <p class="text-gray-700 leading-relaxed">Clients are responsible for providing accurate device information and ensuring availability at the scheduled time. We are not liable for delays caused by incomplete or inaccurate information.</p>
+      </div>
 
-  <div class="info-block service-card" data-aos="fade-up" data-aos-delay="350">
-    <h2>6. Liability</h2>
-    <p>While I take every reasonable precaution, SanoCyber is not responsible for pre-existing issues or unforeseen hardware/software failures during or after service delivery. Our maximum liability is limited to the cost of the service provided.</p>
-  </div>
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="350">
+        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">6. Liability</h2>
+        <p class="text-gray-700 leading-relaxed">While we take every reasonable precaution, SanoCyber is not responsible for pre-existing issues or unforeseen hardware/software failures during or after service delivery. Our maximum liability is limited to the cost of the service provided.</p>
+      </div>
 
-  <div class="info-block service-card" data-aos="fade-up" data-aos-delay="400">
-    <h2>7. Confidentiality</h2>
-    <p>All personal information and data accessed during service will be handled with strict confidentiality and will not be shared without client consent unless required by law.</p>
-  </div>
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="400">
+        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">7. Confidentiality</h2>
+        <p class="text-gray-700 leading-relaxed">All personal information and data accessed during service will be handled with strict confidentiality and will not be shared without client consent unless required by law.</p>
+      </div>
 
-  <div class="info-block service-card" data-aos="fade-up" data-aos-delay="450">
-    <h2>8. Changes to Terms</h2>
-    <p>We reserve the right to update these terms at any time. Significant changes will be communicated via our website or email.</p>
-  </div>
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="450">
+        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">8. Changes to Terms</h2>
+        <p class="text-gray-700 leading-relaxed">We reserve the right to update these terms at any time. Significant changes will be communicated via our website or email.</p>
+      </div>
 
-  <div class="info-block service-card" data-aos="fade-up" data-aos-delay="500">
-    <h2>9. Contact Information</h2>
-    <p>For any questions regarding these terms, please contact us at: glen.sanocyber@gmail.com</p>
-  </div>
-</section>
+      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="500">
+        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">9. Contact Information</h2>
+        <p class="text-gray-700 leading-relaxed">For any questions regarding these terms, please contact us at: <a href="mailto:glen.sanocyber@gmail.com" class="text-blue-600 hover:text-blue-800 underline">glen.sanocyber@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="footer">
-  <p>&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
-  <div class="social-icons">
-    <a href="https://instagram.com/sanocyber" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px;">
-      <span style="margin-left: 5px;">Instagram</span>
-    </a>
+<footer class="bg-gray-800 text-gray-300 py-10 text-center mt-auto rounded-t-xl shadow-inner">
+  <div class="container mx-auto">
+    <p class="mb-4">&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://instagram.com/sanocyber" target="_blank" rel="noopener" class="inline-flex items-center mx-2 hover:text-sky-400 transition duration-300">
+        <img src="https://placehold.co/30x30/ffffff/sky400?text=IG&font=fontawesome" alt="Instagram" class="w-7 h-7 rounded-full" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png'; this.onerror=null;">
+        <span class="ml-2 sr-only">Instagram</span>
+      </a>
+    </div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="script.js"></script>
 <script>
-AOS.init({ duration: 1000, once: true });
+  // Initialize AOS
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50,
+    });
+  }
+
+  // Mobile navigation toggle (example, ideally in script.js)
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active'); // Relies on .active styles in style.css
+    });
+  }
+
+  // Set current year in footer (example, ideally in script.js)
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 </script>
 </body>
 </html>
