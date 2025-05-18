@@ -67,12 +67,14 @@ document.addEventListener('DOMContentLoaded', function () {
       try {
         console.log('Attempting to create checkout session with worker:', createCheckoutSessionWorkerUrl);
 
-        const response = await fetch(createCheckoutSessionWorkerUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json', 
-          },
-        });
+const response = await fetch(createCheckoutSessionWorkerUrl, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json', 
+  },
+  body: JSON.stringify({ email: 'test@sanocyber.com' }) // or collect this from a logged-in user
+});
+
         
         console.log("Response status from worker:", response.status);
         if (!response.ok) {
