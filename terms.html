@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Terms and conditions for using SanoCyber cybersecurity services, including service details, payments, and client responsibilities. Tailwind CSS version.">
-  <meta name="keywords" content="terms of service, cybersecurity terms, SanoCyber policies, Tailwind CSS">
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" 
+        content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; 
+                 script-src * 'unsafe-inline' 'unsafe-eval' data: blob: https://js.stripe.com https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://unpkg.com; 
+                 connect-src * data: blob:; 
+                 style-src * 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com; 
+                 img-src * data: blob:;
+                 font-src * https://fonts.gstatic.com;
+                 frame-src * data: blob: https://js.stripe.com;">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terms and Conditions for SanoCyber services and website usage.">
+  <meta name="keywords" content="terms and conditions, SanoCyber terms, legal, privacy, Tailwind CSS">
   <meta name="author" content="SanoCyber">
-  <meta name="robots" content="index, follow">
-  <title>Terms and Conditions | SanoCyber (Tailwind)</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="robots" content="index, follow"> 
+  <title>Terms and Conditions | SanoCyber (Updated)</title>
+  
+  <link rel="stylesheet" href="style.css"> <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"> <script src="https://cdn.tailwindcss.com"></script> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> <script src="https://js.stripe.com/v3/" async></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
   <style>
     /* Apply Inter font globally */
     body {
       font-family: 'Inter', sans-serif;
       color: #374151; /* Tailwind gray-700 */
     }
-    /* Mobile nav 'active' class styles are in style.css (minimal_style_css_v1) */
+    /* Mobile nav 'active' class styles are defined in your style.css */
+    /* Styles for prose content for readability */
+    .prose h2 { margin-top: 2em; margin-bottom: 1em; font-size: 1.5em; font-weight: 600; }
+    .prose h3 { margin-top: 1.5em; margin-bottom: 0.75em; font-size: 1.25em; font-weight: 600; }
+    .prose p, .prose ul, .prose ol { margin-bottom: 1em; line-height: 1.75; }
+    .prose ul, .prose ol { padding-left: 1.5em; }
+    .prose li { margin-bottom: 0.5em; }
+    .prose a { color: #2563eb; text-decoration: underline; } /* Tailwind blue-600 */
+    .prose a:hover { color: #1d4ed8; } /* Tailwind blue-700 */
   </style>
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
@@ -28,109 +45,93 @@
     <a href="index.html" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors">SanoCyber</a>
     <span class="nav-toggle md:hidden text-3xl text-gray-700 cursor-pointer" id="navToggle">&#9776;</span>
     <nav>
-      <ul class="nav-links hidden md:flex space-x-6 items-center" id="navLinks">
-        <li><a href="index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a></li>
-        <li><a href="tools.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Toolkit</a></li>
-        <li><a href="blog.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Blog</a></li>
-        <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Learn More</a></li>
-        <li><a href="terms.html" class="text-blue-600 font-semibold border-b-2 border-blue-600 pb-1">Terms</a></li>
-        <li><a href="phishshield.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">PhishShield</a></li>
+      <ul class="nav-links hidden md:flex space-x-4 items-center" id="navLinks">
+        <li><a href="index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">Home</a></li>
+        <li><a href="tools.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">Toolkit</a></li>
+        <li><a href="blog.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">Blog</a></li>
+        <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">Learn More</a></li>
+        <li><a href="terms.html" class="text-blue-600 font-semibold border-b-2 border-blue-600 px-2 py-1">Terms</a></li>
+        <li><a href="phishshield.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">PhishShield</a></li>
+        <li><a href="#signup" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-3 rounded-md transition-colors shadow-sm text-sm">Sign Up</a></li>
+        <li><a href="#login" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-3 rounded-md transition-colors shadow-sm text-sm">Login</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<main class="flex-grow">
-  <section class="py-12 md:py-16 px-4 container mx-auto" data-aos="fade-in">
-    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 md:mb-12 text-gray-800">Terms and Conditions</h1>
+<main class="flex-grow py-12 md:py-16 px-4">
+  <div class="container mx-auto max-w-3xl bg-white p-6 md:p-10 rounded-xl shadow-xl" data-aos="fade-up">
+    <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">Terms and Conditions</h1>
+    
+    <div class="prose max-w-none text-gray-700">
+      <p class="text-sm text-gray-500">Last updated: May 18, 2025</p> {/* Example date */}
 
-    <div class="space-y-6 max-w-3xl mx-auto">
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
-        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">1. Introduction</h2>
-        <p class="text-gray-700 leading-relaxed">Welcome to SanoCyber. By using our services, you agree to these terms and conditions. Please read them carefully before engaging with any service.</p>
-      </div>
+      <p>Please read these terms and conditions carefully before using Our Service.</p>
 
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="150">
-        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">2. Services Offered</h2>
-        <p class="text-gray-700 leading-relaxed">We provide cybersecurity services, including Digital Security Checkups, Password Manager Setup, Phishing Awareness Training, and Home Network Security assessments. All services are provided on a best-effort basis.</p>
-      </div>
+      <h2>Interpretation and Definitions</h2>
+      <h3>Interpretation</h3>
+      <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+      <h3>Definitions</h3>
+      <p>For the purposes of these Terms and Conditions:</p>
+      <ul>
+        <li><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to SanoCyber.</li>
+        <li><strong>Service</strong> refers to the Website and the services offered by SanoCyber, including but not limited to PhishShield and the Cybersecurity Toolkit.</li>
+        <li><strong>Terms and Conditions</strong> (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.</li>
+        <li><strong>Website</strong> refers to SanoCyber, accessible from www.sanocyber.com (or your local development URL).</li>
+        <li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
+      </ul>
 
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
-        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">3. Payment and Pricing</h2>
-        <p class="text-gray-700 leading-relaxed">Pricing depends on the type of service, number of devices, and any required software. Full payment is due upon service completion unless otherwise agreed. Payments are accepted via cash, bank transfer, or PayPal.</p>
-      </div>
+      <h2>Acknowledgment</h2>
+      <p>These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.</p>
+      <p>Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.</p>
+      <p>By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.</p>
+      <p>Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.</p>
 
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="250">
-        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">4. Cancellations and Refunds</h2>
-        <p class="text-gray-700 leading-relaxed">Appointments may be canceled or rescheduled with at least 24 hours' notice. Refunds are only offered for services undelivered due to our error.</p>
-      </div>
+      <h2>Use of Services</h2>
+      <p>You agree to use the services provided by SanoCyber, including PhishShield and the Cybersecurity Toolkit, only for lawful purposes and in a way that does not infringe the rights of, restrict or inhibit anyone else's use and enjoyment of the Service. Prohibited behavior includes harassing or causing distress or inconvenience to any other user, transmitting obscene or offensive content or disrupting the normal flow of dialogue within our Service.</p>
+      <p>The PhishShield tool provides an analysis based on AI and common phishing indicators. While it aims to be accurate, SanoCyber does not guarantee that it will detect all phishing attempts or that its analysis will always be correct. You should use your own judgment in conjunction with the tool's output.</p>
+      <p>The free tier of PhishShield is limited to a certain number of scans per day. Exceeding this limit may require upgrading to a paid subscription.</p>
 
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
-        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">5. Client Responsibilities</h2>
-        <p class="text-gray-700 leading-relaxed">Clients are responsible for providing accurate device information and ensuring availability at the scheduled time. We are not liable for delays caused by incomplete or inaccurate information.</p>
-      </div>
+      <h2>Subscriptions and Payments</h2>
+      <p>Some parts of the Service are available only with a paid Subscription. You will be billed in advance on a recurring and periodic basis (such as monthly or annually), depending on the type of Subscription plan you select when purchasing the Subscription.</p>
+      <p>At the end of each period, Your Subscription will automatically renew under the exact same conditions unless You cancel it or the Company cancels it. You may cancel Your Subscription renewal either through Your Account settings page or by contacting the Company.</p>
+      <p>All payments are processed through Stripe. SanoCyber does not store your credit card details.</p>
 
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="350">
-        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">6. Liability</h2>
-        <p class="text-gray-700 leading-relaxed">While we take every reasonable precaution, SanoCyber is not responsible for pre-existing issues or unforeseen hardware/software failures during or after service delivery. Our maximum liability is limited to the cost of the service provided.</p>
-      </div>
+      <h2>Intellectual Property</h2>
+      <p>The Service and its original content (excluding Content provided by You or other users), features and functionality are and will remain the exclusive property of the Company and its licensors. The Service is protected by copyright, trademark, and other laws of both the United Kingdom and foreign countries.</p>
 
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="400">
-        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">7. Confidentiality</h2>
-        <p class="text-gray-700 leading-relaxed">All personal information and data accessed during service will be handled with strict confidentiality and will not be shared without client consent unless required by law.</p>
-      </div>
+      <h2>Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.</p>
 
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="450">
-        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">8. Changes to Terms</h2>
-        <p class="text-gray-700 leading-relaxed">We reserve the right to update these terms at any time. Significant changes will be communicated via our website or email.</p>
-      </div>
+      <h2>Governing Law</h2>
+      <p>The laws of the United Kingdom, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.</p>
 
-      <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="500">
-        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-blue-700">9. Contact Information</h2>
-        <p class="text-gray-700 leading-relaxed">For any questions regarding these terms, please contact us at: <a href="mailto:glen.sanocyber@gmail.com" class="text-blue-600 hover:text-blue-800 underline">glen.sanocyber@gmail.com</a></p>
-      </div>
+      <h2>Changes to These Terms and Conditions</h2>
+      <p>We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.</p>
+      <p>By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the Website and the Service.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
+      <ul>
+        <li>By email: glen.sanocyber@gmail.com</li>
+        <li>By visiting this page on our website: <a href="index.html#contact">www.sanocyber.com/contact</a> (Update link if you create a dedicated contact page)</li>
+      </ul>
     </div>
-  </section>
+  </div>
 </main>
 
 <footer class="bg-gray-800 text-gray-300 py-10 text-center mt-auto rounded-t-xl shadow-inner">
   <div class="container mx-auto">
     <p class="mb-4">&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
-    <div class="social-icons">
+    <div class="social-icons mt-4"> 
       <a href="https://instagram.com/sanocyber" target="_blank" rel="noopener" class="inline-flex items-center mx-2 hover:text-sky-400 transition duration-300">
-        <img src="https://placehold.co/30x30/ffffff/sky400?text=IG&font=fontawesome" alt="Instagram" class="w-7 h-7 rounded-full" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png'; this.onerror=null;">
+        <img src="https://placehold.co/30x30/ffffff/sky400?text=IG" alt="Instagram" class="w-7 h-7 rounded-full" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png'; this.onerror=null;">
         <span class="ml-2 sr-only">Instagram</span>
       </a>
     </div>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="script.js"></script>
-<script>
-  // Initialize AOS
-  if (typeof AOS !== 'undefined') {
-    AOS.init({
-      duration: 800,
-      once: true,
-      offset: 50,
-    });
-  }
-
-  // Mobile navigation toggle (example, ideally in script.js)
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active'); // Relies on .active styles in style.css
-    });
-  }
-
-  // Set current year in footer (example, ideally in script.js)
-  const yearSpan = document.getElementById('year');
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
-</script>
+<script src="script.js"></script> 
 </body>
 </html>
