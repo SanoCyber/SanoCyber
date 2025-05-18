@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // --- Stripe Checkout Integration ---
   console.log("Setting up Stripe Checkout Integration...");
-  const STRIPE_PUBLISHABLE_KEY = 'pk_test_51RPgrgQuW7EBV2efACAa9rBHFAZ0lX64Pi8dAHJgNTTgLsX0yjEHEJZJ78yUgHgTJuUVvzRDNjpljlhLJWUCbYnn00sFvuPiLr'; // Your provided key
+  const STRIPE_PUBLISHABLE_KEY = 'pk_live_51RPgrWJ2AdfUeYzb2xTAkDOrGh4AahXEdSXHDX90f64OJZVgUXFgNhBnSEn6X4TfL20L40IGKxDbePI1NEXgPXOk00AeSeQS3z'; // Your provided key
   
   if (typeof Stripe === 'function') {
     const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
