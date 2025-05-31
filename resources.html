@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Downloads | SanoCyber</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./supabaseClient.js"></script>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 flex items-center justify-between py-3">
+      <a href="index.html" class="text-2xl font-bold text-blue-600 hover:text-blue-700">SanoCyber</a>
+      <!-- Add your nav here if needed -->
+    </div>
+  </header>
+
+  <main class="flex-grow flex flex-col items-center justify-center py-10 px-4">
+    <div id="not-authenticated" class="hidden bg-red-50 text-red-700 p-6 rounded-xl shadow text-center">
+      <h2 class="text-2xl font-bold mb-2">Not Logged In</h2>
+      <p class="mb-4">You must be logged in to view this page.</p>
+      <a href="login.html" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow transition">Go to Login</a>
+    </div>
+    <div id="downloads-section" class="bg-white p-8 rounded-xl shadow-xl w-full max-w-xl hidden">
+      <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Your Downloads</h1>
+      <ul class="space-y-4" id="pdf-list">
+        <!-- List of PDFs will appear here -->
+        <li>
+          <a href="downloads/sample1.pdf" target="_blank" class="block px-6 py-4 bg-gray-100 rounded-lg hover:bg-blue-50 font-semibold shadow">Cyber Security Awareness Guide (PDF)</a>
+        </li>
+        <li>
+          <a href="downloads/sample2.pdf" target="_blank" class="block px-6 py-4 bg-gray-100 rounded-lg hover:bg-blue-50 font-semibold shadow">Phishing Red Flags Poster (PDF)</a>
+        </li>
+        <!-- Add more PDFs here -->
+      </ul>
+      <button id="logout-btn" class="mt-8 w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-md shadow">Log Out</button>
+    </div>
+  </main>
+  <footer class="bg-gray-800 text-gray-300 py-6 text-center mt-auto rounded-t-xl shadow-inner">
+    <p>&copy; <span id="year"></span> SanoCyber. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Update footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Auth check logic
+    async function checkAuth() {
+      if (!window.mySupabaseClient) {
+        alert('Critical: Supabase not initialized.');
+        return;
+      }
+      const { data: { session } } = await window.mySupabaseClient.auth.getSession();
+      if (!session) {
+        document.getElementById('downloads-section').classList.add('hidden');
+        document.getElementById('not-authenticated').classList.remove('hidden');
+      } else {
+        document.getElementById('downloads-section').classList.remove('hidden');
+        document.getElementById('not-authenticated').classList.add('hidden');
+      }
+    }
+
+    checkAuth();
+
+    // Optional: log out button
+    document.getElementById('logout-btn').onclick = async function () {
+      await window.mySupabaseClient.auth.signOut();
+      window.location.href = "login.html";
+    };
+  </script>
+</body>
+</html>

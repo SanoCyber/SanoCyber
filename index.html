@@ -47,6 +47,9 @@
       <ul class="nav-links hidden md:flex space-x-4 items-center" id="navLinks"> 
         <li><a href="index.html" class="text-blue-600 font-semibold border-b-2 border-blue-600 px-2 py-1">Home</a></li>
         <li><a href="tools.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">Toolkit</a></li>
+          <li id="downloadsNavLink" style="display:none;">
+        <a href="resources.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">Downloads</a>
+          </li>
         <li><a href="blog.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">Blog</a></li>
         <li><a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">Learn More</a></li>
         <li><a href="terms.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors px-2 py-1">Terms</a></li>
@@ -194,5 +197,21 @@
 </footer>
 
 <script src="script.js"></script>
+
+<!-- Show Downloads nav only for logged-in users -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./supabaseClient.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', async function () {
+    // Ensure Supabase client loaded
+    if (!window.mySupabaseClient) return;
+    // Get session (are they logged in?)
+    const { data: { session } } = await window.mySupabaseClient.auth.getSession();
+    if (session) {
+      const downloadsLink = document.getElementById('downloadsNavLink');
+      if (downloadsLink) downloadsLink.style.display = 'list-item';
+    }
+  });
+</script>
 </body>
 </html>
